@@ -1,0 +1,18 @@
+do you have a fever? 
+do you have a dry cough? 
+are you experiencing difficulty in breathing? 
+do you feel tired/fatigued? 
+are you experiencing body aches? 
+are you experiencing a loss of smell and/or taste? 
+do you have diarrhoea? 
+are you experiencing severe vomitting? 
+do you have the chills? 
+do you have a sore throat? 
+do you have trouble breathing? 
+are you experiencing persistent chest pains?
+are you experiencing any sudden confusion? 
+are your lips and/or face turning blue? 
+are you 50 years of age or older? 
+have you been diagnosed with a lung or heart disease?
+have you been diagnosed with a chronic kidney or liver disease?
+have you come into contact with a covid-19 patient?
