@@ -1,0 +1,150 @@
+DATA STRUCUTRES CODES
+------------------------------
+1-Nth node print form the back
+#include<iostream>
+using namespace std;
+struct node
+{
+	int data;
+	node *next;
+};
+class list
+{
+	node *head,*tail;
+	public:
+		list()
+		{
+			head=NULL;
+			tail=NULL;
+		}
+		void addnode(int n)
+		{
+			node *temp=new node;
+			temp->data=n;
+			temp->next=NULL;
+			if(head==NULL)
+			{
+				head=temp;
+				tail=temp;
+			}
+			else
+			{
+				tail->next=temp;
+				tail=tail->next;
+			}
+		}
+		void printnodefromback(int n)
+		{
+			int count=0,k;
+			node *temp=new node;
+			temp=head;
+			while(temp!=NULL)
+			{
+				temp=temp->next;
+				++count;
+			}
+			k=count-(n+1);
+			temp=head;
+			count=0;
+			while(count<=k)
+			{
+				
+				temp=temp->next;
+				++count;
+			}
+			cout<<endl<<"node is: "<<count;
+		}
+};
+int main()
+{
+	list obj;
+	int n,val,i;
+	cout<<"Linked list elements: ";
+	cin>>val;
+	cout<<endl<<"Enter elements: ";
+	for(i=0;i<val;i++)
+	{
+		cin>>n;
+		obj.addnode(n);
+	}
+	n=0;
+	cout<<endl<<"Which node wish to delete from back: ";
+	cin>>n;
+	obj.printnodefromback(n);
+}
+---------------------------------------------------------------
+---------------------------------------------------------------
+2-Write a function that counts a number of times int occurs in 
+a linked list(without recursion asaan hai)
+-with recursion:
+#include<iostream>
+using namespace std;
+struct node
+{
+	int data;
+	node *next;
+};node *head,*tail;
+class list
+{
+	
+	public:
+		list()
+		{
+			head=NULL;
+			tail=NULL;
+		}
+		void addnode(int n)
+		{
+			node *temp=new node;
+			temp->data=n;
+			temp->next=NULL;
+			if(head==NULL)
+			{
+				head=temp;
+				tail=temp;
+			}
+			else
+			{
+				tail->next=temp;
+				tail=tail->next;
+			}
+		}
+		int recurr(node *head,int key)
+		{
+			static int frequency=0;
+			if(head==NULL)
+			{
+				return frequency;
+			}
+			else if(head->data==key)
+			{
+				++frequency;
+				cout<<endl<<frequency;
+				return recurr(head->next,key);
+			}
+			return recurr(head->next,key);
+			
+		}
+};
+int main()
+{
+	list obj;
+	int n,val,i;
+	cout<<"Linked list elements: ";
+	cin>>val;
+	cout<<endl<<"Enter elements: ";
+	for(i=0;i<val;i++)
+	{
+		cin>>n;
+		obj.addnode(n);
+	}
+	n=0;
+	val=0;
+	cout<<endl<<"kis ki frequency maloom kerni hai digit likho: ";
+	cin>>n;
+	val=obj.recurr(head,n);
+	cout<<endl;
+	cout<<"frequency: "<<val;
+}
+----------------------------------------------------------------------
+----------------------------------------------------------------------
